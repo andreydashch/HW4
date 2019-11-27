@@ -15,10 +15,12 @@ package ua.training.subscriber.account;
 class Contacts {
     TelephonesNumbers telephonesNumbers;
     Address address;
-    String email;
-    String skype;
+    private String email;
+    private String skype;
 
-    public Contacts() {
+    Contacts() {
+        address = new Address();
+        telephonesNumbers = new TelephonesNumbers();
     }
 
     void setEmail(String email) {

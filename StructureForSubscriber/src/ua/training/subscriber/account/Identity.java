@@ -13,31 +13,32 @@ package ua.training.subscriber.account;
  * @author      Dashchyk Andrey
  */
 class Identity {
-    Name name;
-    String nickName;
-    String comment;
-    String group;
+    public Name name;
+    private String nickName;
+    private String comment;
+    private String group;
 
-    public Identity() {
+    Identity() {
+        name = new Name();
     }
 
-    public void setComment(String comment) {
+    void setComment(String comment) {
         this.comment = comment;
     }
 
-    public void setGroup(String group) {
+    void setGroup(String group) {
         this.group = group;
     }
 
-    public void setNickName(String nickName) {
+    void setNickName(String nickName) {
         this.nickName = nickName;
     }
 
-    public String getComment() {
+    String getComment() {
         return comment;
     }
 
-    public String getGroup() {
+    String getGroup() {
         return group;
     }
 

@@ -18,26 +18,26 @@ public class Meta {
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 
-    public Meta() {
+    Meta() {
     }
 
-    public void setUpdateTime() {
+    void setUpdateTime() {
         updateTime = LocalDateTime.now();
         setCreateTime();
     }
 
-    private void setCreateTime() {
+    void setCreateTime() {
         boolean notSet = createTime == LocalDateTime.MIN;
         if (notSet) {
             createTime = updateTime;
         }
     }
 
-    public LocalDateTime getCreateTime() {
+    LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public LocalDateTime getUpdateTime() {
+    LocalDateTime getUpdateTime() {
         return updateTime;
     }
 }

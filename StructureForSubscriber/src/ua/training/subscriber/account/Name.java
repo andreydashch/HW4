@@ -17,22 +17,22 @@ class Name {
     String firstName;
     String patronymic;
 
-    public Name() {
+    Name() {
     }
 
-    public void setFirstName(String firstName) {
+    void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public void setPatronymic(String patronymic) {
+    void setPatronymic(String patronymic) {
         this.patronymic = patronymic;
     }
 
-    public void setSurname(String surname) {
+    void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public String getFullName(String separator) {
+    String getFullName(String separator) {
         return  surname +
                 separator +
                 firstName +
