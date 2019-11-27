@@ -11,10 +11,11 @@ public class AccountCard {
     AccountCard() {
         identity = new Identity();
         contacts = new Contacts();
-        // meta = new Meta(); not here!
+        meta = new Meta();
     }
 
-    public void createCard(HashMap<String, String> account) {
+    public void setAccountCard(HashMap<String, String> account) {
+        meta.setTimeUpdate();
         identity.name.setFirstName(account.get("firstName"));
         identity.name.setSurname(account.get("surname"));
         identity.name.setPatronymic(account.get("patronymic"));
@@ -203,22 +204,30 @@ class TelephonesNumbers {
 }
 
 class Meta {
-    private LocalDateTime timeOfCreate;
-    private LocalDateTime timeOfLastUpdate;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 
     Meta() {
-        timeOfCreate = LocalDateTime.now();
+        createTime = LocalDateTime.MIN;
     }
 
-    private void setTimeOfLastUpdate() {
-            timeOfLastUpdate = LocalDateTime.now();
+    public void setTimeUpdate() {
+            updateTime = LocalDateTime.now();
+            setCreateTime();
     }
 
-    public LocalDateTime getTimeOfCreate() {
-        return timeOfCreate;
+    private void setCreateTime() {
+        boolean notSet = createTime == LocalDateTime.MIN;
+        if (notSet) {
+            createTime = updateTime;
+        }
     }
 
-    public LocalDateTime getTimeOfLastUpdate() {
-        return timeOfLastUpdate;
+    public LocalDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
     }
 }
