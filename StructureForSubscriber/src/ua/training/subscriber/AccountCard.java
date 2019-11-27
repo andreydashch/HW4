@@ -27,7 +27,7 @@ public class AccountCard {
     }
 
     public void setAccountCard(HashMap<String, String> account) {
-        meta.setTimeUpdate();
+        meta.setUpdateTime();
         identity.name.setFirstName(account.get("firstName"));
         identity.name.setSurname(account.get("surname"));
         identity.name.setPatronymic(account.get("patronymic"));
@@ -246,7 +246,7 @@ class Meta {
         createTime = LocalDateTime.MIN;
     }
 
-    public void setTimeUpdate() {
+    public void setUpdateTime() {
             updateTime = LocalDateTime.now();
             setCreateTime();
     }
