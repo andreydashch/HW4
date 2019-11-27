@@ -13,9 +13,9 @@ package ua.training.subscriber.globalconstants;
  * @author      Dashchyk Andrey
  */
 public class RegexConst {
-    public static final String FIRST_NAME = "[A-Z][a-z]?";
-    public static final String SURNAME = "[A-Z][a-z]?";
-    public static final String PATRONYMIC = "[A-Z][a-z]?";
+    public static final String FIRST_NAME = "[A-Z][a-z]+";
+    public static final String SURNAME = "[A-Z][a-z]+";
+    public static final String PATRONYMIC = "[A-Z][a-z]+";
     public static final String NICK_NAME = "\\w*";
     public static final String COMMENT = ".{1,1000}";
     public static final String GROUP = ".*";

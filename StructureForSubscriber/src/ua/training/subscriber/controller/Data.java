@@ -16,6 +16,7 @@ import ua.training.subscriber.globalconstants.TextConst;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /**
  * @author      Dashchyk Andrey
@@ -28,7 +29,11 @@ class Data {
     }
 
     void printAccountCard(HashMap<String, String> accountInfo){
-        view.printHashMap(accountInfo);
+        TreeSet<String> sortKeys = new TreeSet<String>(accountInfo.keySet());
+
+        for(String key : sortKeys){
+            view.printMessage(key + TextConst.TEXT_SEPARATOR + accountInfo.get(key));
+        }
     }
 
     HashMap<String, String> getUserInfo(Scanner sc) {
