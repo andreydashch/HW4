@@ -1,14 +1,6 @@
-/*
- * @(#) Controller.java
- *
- * This software can be used by anyone
- * with no limit. But developer do not
- * granite its proper working.
- */
+package ua.training.subscriber.controller;
 
-
-package ua.training.subscriber;
-
+import ua.training.subscriber.View;
 import ua.training.subscriber.account.AccountCard;
 import ua.training.subscriber.constants.RegexConst;
 import ua.training.subscriber.constants.TextConst;
@@ -16,30 +8,18 @@ import ua.training.subscriber.constants.TextConst;
 import java.util.HashMap;
 import java.util.Scanner;
 
-/**
- * @author      Dashchyk Andrey
- */
-public class Controller {
+class Data {
     private View view;
-    private AccountCard accountCard;
 
-    Controller(AccountCard accountCard, View view){
-        this.accountCard = accountCard;
+    Data(View view) {
         this.view = view;
     }
 
-    public void processUser(){
-        Scanner sc = new Scanner(System.in);
-        HashMap<String, String> accountInfo;
-
-        accountCard.setAccountCard(getUserInfo(sc));
-        accountInfo = accountCard.getAccountCard(TextConst.NAME_SEPARATOR,
-                TextConst.ADDRESS_SEPARATOR);
-
+    void printAccountCard(HashMap<String, String> accountInfo){
         view.printHashMap(accountInfo);
     }
 
-    private HashMap<String, String> getUserInfo(Scanner sc) {
+    HashMap<String, String> getUserInfo(Scanner sc) {
         int index = 0;
         String validInput;
         HashMap<String, String> account = new HashMap<>();
@@ -59,11 +39,7 @@ public class Controller {
         String temp;
 
         while (true) {
-            for(String elem : AccountCard.getNotRequiredKeysOfMap()){
-                if(elem.equals(key)){
-                    view.printMessage(TextConst.SKIP_HINT);
-                }
-            }
+            regex = checkRequirements(regex, key);
             view.printMessage(genHintMessage(key));
             temp = sc.next();
 
@@ -71,6 +47,19 @@ public class Controller {
                 return temp;
             }
         }
+    }
+
+    private String checkRequirements(String regex, String key) {
+        for(String elem : AccountCard.getNotRequiredKeysOfMap()){
+            boolean notRequire = elem.equals(key);
+
+            if(notRequire){
+                view.printMessage(TextConst.SKIP_HINT);
+                regex = "(" + regex + ")|(-)";
+            }
+        }
+
+        return regex;
     }
 
     private String genHintMessage(String key) {

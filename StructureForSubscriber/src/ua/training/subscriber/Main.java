@@ -10,6 +10,7 @@
 package ua.training.subscriber;
 
 import ua.training.subscriber.account.AccountCard;
+import ua.training.subscriber.controller.Controller;
 
 /**
  * Storing user information
