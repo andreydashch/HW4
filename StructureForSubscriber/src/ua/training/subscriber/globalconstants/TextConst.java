@@ -1,4 +1,4 @@
-package ua.training.subscriber.constants;
+package ua.training.subscriber.globalconstants;
 
 public class TextConst {
     public static final String TEXT_SEPARATOR = " ";

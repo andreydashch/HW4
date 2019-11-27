@@ -11,6 +11,7 @@ package ua.training.subscriber;
 
 import ua.training.subscriber.account.AccountCard;
 import ua.training.subscriber.controller.Controller;
+import ua.training.subscriber.view.View;
 
 /**
  * Storing user information

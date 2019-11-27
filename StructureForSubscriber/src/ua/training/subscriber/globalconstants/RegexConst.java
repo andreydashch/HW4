@@ -7,9 +7,7 @@
  */
 
 
-package ua.training.subscriber.constants;
-
-import java.util.Scanner;
+package ua.training.subscriber.globalconstants;
 
 /**
  * @author      Dashchyk Andrey

@@ -7,9 +7,9 @@
  */
 
 
-package ua.training.subscriber;
+package ua.training.subscriber.view;
 
-import ua.training.subscriber.constants.TextConst;
+import ua.training.subscriber.globalconstants.TextConst;
 
 import java.util.HashMap;
 

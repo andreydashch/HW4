@@ -1,13 +1,25 @@
+/*
+ * @(#) Controller.java
+ *
+ * This software can be used by anyone
+ * with no limit. But developer do not
+ * granite its proper working.
+ */
+
+
 package ua.training.subscriber.controller;
 
-import ua.training.subscriber.View;
+import ua.training.subscriber.view.View;
 import ua.training.subscriber.account.AccountCard;
-import ua.training.subscriber.constants.RegexConst;
-import ua.training.subscriber.constants.TextConst;
+import ua.training.subscriber.globalconstants.RegexConst;
+import ua.training.subscriber.globalconstants.TextConst;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * @author      Dashchyk Andrey
+ */
 class Data {
     private View view;
 
