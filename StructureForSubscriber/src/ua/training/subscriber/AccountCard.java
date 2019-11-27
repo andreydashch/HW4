@@ -34,6 +34,29 @@ public class AccountCard {
         contacts.address.setFlatNumber(account.get("flatNumber"));
     }
 
+    public void getAccountCard(String nameSeparator, String addressSeparator) {
+        HashMap<String, String> account;
+
+        account = new HashMap<>();
+        account.put("fullName", identity.name.getFullName(nameSeparator));
+        account.put("nickName", identity.getNickName());
+        account.put("comment", identity.getComment());
+        account.put("group", identity.getGroup());
+        account.put("homeTelephone", contacts.telephonesNumbers.getHome());
+        account.put("mobile1Telephone", contacts.telephonesNumbers.getMobil1());
+        account.put("mobile2Telephone", contacts.telephonesNumbers.getMobil2());
+        account.put("email", contacts.getEmail());
+        account.put("skype", contacts.getSkype());
+        account.put("address", contacts.address.getAddress(addressSeparator));
+    }
+
+    public LocalDateTime getCreateTime(){
+        return meta.getCreateTime();
+    }
+
+    public LocalDateTime getUpdateTime(){
+        return meta.getUpdateTime();
+    }
 }
 
 class Identity {
