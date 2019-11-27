@@ -9,6 +9,7 @@
 
 package ua.training.subscriber;
 
+import ua.training.subscriber.account.AccountCard;
 import ua.training.subscriber.constants.RegexConst;
 import ua.training.subscriber.constants.TextConst;
 
@@ -58,8 +59,14 @@ public class Controller {
         String temp;
 
         while (true) {
+            for(String elem : AccountCard.getNotRequiredKeysOfMap()){
+                if(elem.equals(key)){
+                    view.printMessage(TextConst.SKIP_HINT);
+                }
+            }
             view.printMessage(genHintMessage(key));
             temp = sc.next();
+
             if (temp.matches(regex)) {
                 return temp;
             }

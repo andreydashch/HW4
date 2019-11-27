@@ -7,7 +7,7 @@
  */
 
 
-package ua.training.subscriber;
+package ua.training.subscriber.account;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -29,6 +29,11 @@ public class AccountCard {
     public static String[] getKeysOfMap() {
         Const map = new Const();
         return map.keys;
+    }
+
+    public static String[] getNotRequiredKeysOfMap(){
+        Const map = new Const();
+        return map.notRequiredKeys;
     }
 
     public void setAccountCard(HashMap<String, String> account) {
@@ -294,5 +299,9 @@ class Const {
             "street",
             "houseNumber",
             "flatNumber"
+    };
+
+    public final String[] notRequiredKeys ={
+            "mobil1Telephone",
     };
 }

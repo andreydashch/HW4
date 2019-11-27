@@ -9,6 +9,8 @@
 
 package ua.training.subscriber;
 
+import ua.training.subscriber.account.AccountCard;
+
 /**
  * Storing user information
  *
