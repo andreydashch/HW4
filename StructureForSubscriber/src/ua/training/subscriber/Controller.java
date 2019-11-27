@@ -9,6 +9,10 @@
 
 package ua.training.subscriber;
 
+import ua.training.subscriber.constants.RegexConst;
+
+import java.util.HashMap;
+
 /**
  * @author      Dashchyk Andrey
  */
@@ -22,7 +26,14 @@ public class Controller {
     }
 
     public void processUser(){
+        HashMap<String, String> account;
+        account = new HashMap<>();
 
+        account.put("firstName", getValidInput(RegexConst.FIRST_NAME));
+    }
+
+    private String getValidInput(String regex) {
+        return "notImplemented";
     }
 
     private String generateHintMessage() {
