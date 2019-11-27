@@ -19,13 +19,25 @@ public class SubscriberCard{
 }
 
 class Identity {
-    private Name name;
+    public Name name;
     private String nickName;
     private String comment;
     private String group;
 
     Identity() {
         name = new Name();
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }
 
