@@ -46,7 +46,7 @@ public class AccountCard {
         contacts.address.setFlatNumber(account.get("flatNumber"));
     }
 
-    public void getAccountCard(String nameSeparator, String addressSeparator) {
+    public HashMap<String, String> getAccountCard(String nameSeparator, String addressSeparator) {
         HashMap<String, String> account;
 
         account = new HashMap<>();
@@ -60,6 +60,8 @@ public class AccountCard {
         account.put("email", contacts.getEmail());
         account.put("skype", contacts.getSkype());
         account.put("address", contacts.address.getAddress(addressSeparator));
+
+        return account;
     }
 
     public LocalDateTime getCreateTime(){
