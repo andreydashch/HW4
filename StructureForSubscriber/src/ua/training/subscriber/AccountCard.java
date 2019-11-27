@@ -1,8 +1,20 @@
+/*
+ * @(#) View.java
+ *
+ * This software can be used by anyone
+ * with no limit. But developer do not
+ * granite its proper working.
+ */
+
+
 package ua.training.subscriber;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
+/**
+ * @author      Dashchyk Andrey
+ */
 public class AccountCard {
     private Identity identity;
     private Contacts contacts;
