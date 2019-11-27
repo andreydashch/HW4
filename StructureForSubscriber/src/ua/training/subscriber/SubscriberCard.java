@@ -10,7 +10,7 @@ public class SubscriberCard{
     SubscriberCard() {
         identity = new Identity();
         contacts = new Contacts();
-        meta = new Meta();
+        // meta = new Meta(); not here!
     }
 
 
@@ -37,6 +37,18 @@ class Identity {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
 }
 
 class Name {
@@ -54,6 +66,18 @@ class Name {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getFullName(String separator) {
+        StringBuilder fullName = new StringBuilder(50);
+
+        fullName.append(surname);
+        fullName.append(separator);
+        fullName.append(firstName);
+        fullName.append(separator);
+        fullName.append(patronymic);
+
+        return fullName.toString();
     }
 }
 
@@ -74,6 +98,14 @@ class Contacts {
 
     public void setSkype(String skype) {
         this.skype = skype;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSkype() {
+        return skype;
     }
 }
 
@@ -102,6 +134,22 @@ class Address {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public String getAddress(String separator) {
+        StringBuilder address = new StringBuilder(100);
+
+        address.append(index);
+        address.append(separator);
+        address.append(city);
+        address.append(separator);
+        address.append(street);
+        address.append(separator);
+        address.append(house);
+        address.append(separator);
+        address.append(flatNumber);
+
+        return address.toString();
     }
 }
 
