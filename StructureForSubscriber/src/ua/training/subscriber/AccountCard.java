@@ -1,18 +1,37 @@
 package ua.training.subscriber;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 
-public class SubscriberCard{
+public class AccountCard {
     private Identity identity;
     private Contacts contacts;
     private Meta meta;
 
-    SubscriberCard() {
+    AccountCard() {
         identity = new Identity();
         contacts = new Contacts();
         // meta = new Meta(); not here!
     }
 
+    public void createCard(HashMap<String, String> account) {
+        identity.name.setFirstName(account.get("firstName"));
+        identity.name.setSurname(account.get("surname"));
+        identity.name.setPatronymic(account.get("patronymic"));
+        identity.setNickName(account.get("nickName"));
+        identity.setComment(account.get("comment"));
+        identity.setGroup(account.get("group"));
+        contacts.telephonesNumbers.setHome(account.get("homeTelephone"));
+        contacts.telephonesNumbers.setMobil1(account.get("mobil1telephone"));
+        contacts.telephonesNumbers.setMobil2(account.get("mobil2telephone"));
+        contacts.setEmail(account.get("email"));
+        contacts.setSkype(account.get("skype"));
+        contacts.address.setIndex(account.get("index"));
+        contacts.address.setCity(account.get("city"));
+        contacts.address.setStreet(account.get("street"));
+        contacts.address.setHouseNumber(account.get("houseNumber"));
+        contacts.address.setFlatNumber(account.get("flatNumber"));
+    }
 
 }
 
@@ -113,7 +132,7 @@ class Address {
     String index;
     String city;
     String street;
-    String house;
+    String houseNumber;
     String flatNumber;
 
     public void setCity(String city) {
@@ -124,8 +143,8 @@ class Address {
         this.flatNumber = flatNumber;
     }
 
-    public void setHouse(String house) {
-        this.house = house;
+    public void setHouseNumber(String house) {
+        this.houseNumber = house;
     }
 
     public void setIndex(String index) {
@@ -145,7 +164,7 @@ class Address {
         address.append(separator);
         address.append(street);
         address.append(separator);
-        address.append(house);
+        address.append(houseNumber);
         address.append(separator);
         address.append(flatNumber);
 
