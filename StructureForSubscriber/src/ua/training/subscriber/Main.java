@@ -10,8 +10,7 @@
 package ua.training.subscriber;
 
 /**
- *
- * Game for guessing number from range
+ * Storing user information
  *
  * @author      Dashchyk Andrey
  */
