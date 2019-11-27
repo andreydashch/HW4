@@ -40,23 +40,25 @@ public class Controller {
 
     private HashMap<String, String> getUserInfo(Scanner sc) {
         int index = 0;
+        String validInput;
         HashMap<String, String> account = new HashMap<>();
         String[] keysArray = AccountCard.getKeysOfMap();
         String[] regexArray = RegexConst.getRegexArray();
 
         for (String key : keysArray){
-            account.put(key, getValidInput(sc, regexArray[index]));
+            validInput = getValidInput(sc, regexArray[index], key);
+            account.put(key, validInput);
             index++;
         }
 
         return account;
     }
 
-    private String getValidInput(Scanner sc, String regex) {
+    private String getValidInput(Scanner sc, String regex, String key) {
         String temp;
 
         while (true) {
-            // view.printMessage(hintMessage);
+            view.printMessage(genHintMessage(key));
             temp = sc.next();
             if (temp.matches(regex)) {
                 return temp;
@@ -64,7 +66,12 @@ public class Controller {
         }
     }
 
-    private String generateHintMessage() {
-        return "notImplement";
+    private String genHintMessage(String key) {
+        StringBuilder hintMessage;
+        hintMessage = new StringBuilder();
+        hintMessage.append(TextConst.START_HINT);
+        hintMessage.append(key);
+
+        return hintMessage.toString();
     }
 }
