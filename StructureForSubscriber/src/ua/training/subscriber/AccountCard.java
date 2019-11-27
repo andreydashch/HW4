@@ -40,8 +40,8 @@ public class AccountCard {
         identity.setComment(account.get("comment"));
         identity.setGroup(account.get("group"));
         contacts.telephonesNumbers.setHome(account.get("homeTelephone"));
-        contacts.telephonesNumbers.setMobil1(account.get("mobil1telephone"));
-        contacts.telephonesNumbers.setMobil2(account.get("mobil2telephone"));
+        contacts.telephonesNumbers.setMobil1(account.get("mobil1Telephone"));
+        contacts.telephonesNumbers.setMobil2(account.get("mobil2Telephone"));
         contacts.setEmail(account.get("email"));
         contacts.setSkype(account.get("skype"));
         contacts.address.setIndex(account.get("index"));
@@ -60,8 +60,8 @@ public class AccountCard {
         account.put("comment", identity.getComment());
         account.put("group", identity.getGroup());
         account.put("homeTelephone", contacts.telephonesNumbers.getHome());
-        account.put("mobile1Telephone", contacts.telephonesNumbers.getMobil1());
-        account.put("mobile2Telephone", contacts.telephonesNumbers.getMobil2());
+        account.put("mobil1Telephone", contacts.telephonesNumbers.getMobil1());
+        account.put("mobil2Telephone", contacts.telephonesNumbers.getMobil2());
         account.put("email", contacts.getEmail());
         account.put("skype", contacts.getSkype());
         account.put("address", contacts.address.getAddress(addressSeparator));
@@ -217,32 +217,32 @@ class Address {
 }
 
 class TelephonesNumbers {
-    private String Home;
-    private String Mobil1;
-    private String Mobil2;
+    private String home;
+    private String mobil1;
+    private String mobil2;
 
     public void setHome(String home) {
-        Home = home;
+        this.home = home;
     }
 
     public void setMobil1(String mobil1) {
-        Mobil1 = mobil1;
+        this.mobil1 = mobil1;
     }
 
     public void setMobil2(String mobil2) {
-        Mobil2 = mobil2;
+        this.mobil2 = mobil2;
     }
 
     public String getHome() {
-        return Home;
+        return home;
     }
 
     public String getMobil1() {
-        return Mobil1;
+        return mobil1;
     }
 
     public String getMobil2() {
-        return Mobil2;
+        return mobil2;
     }
 }
 
@@ -276,9 +276,11 @@ class Meta {
 }
 
 class Const {
+    // sequence is very important
     public final String[] keys ={
             "firstName",
             "surname",
+            "patronymic",
             "nickName",
             "comment",
             "group",
