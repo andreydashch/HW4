@@ -13,7 +13,7 @@ package ua.training.subscriber.account;
  * @author      Dashchyk Andrey
  */
 class Identity {
-    public Name name;
+    Name name;
     String nickName;
     String comment;
     String group;

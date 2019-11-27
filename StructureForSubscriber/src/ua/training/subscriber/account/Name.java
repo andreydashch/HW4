@@ -33,14 +33,10 @@ class Name {
     }
 
     public String getFullName(String separator) {
-        StringBuilder fullName = new StringBuilder(50);
-
-        fullName.append(surname);
-        fullName.append(separator);
-        fullName.append(firstName);
-        fullName.append(separator);
-        fullName.append(patronymic);
-
-        return fullName.toString();
+        return  surname +
+                separator +
+                firstName +
+                separator +
+                patronymic;
     }
 }
