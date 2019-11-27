@@ -1,5 +1,5 @@
 /*
- * @(#) View.java
+ * @(#) AccountCard.java
  *
  * This software can be used by anyone
  * with no limit. But developer do not
