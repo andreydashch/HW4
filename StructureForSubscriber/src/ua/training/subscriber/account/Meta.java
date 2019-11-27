@@ -27,8 +27,8 @@ public class Meta {
     }
 
     void setCreateTime() {
-        boolean notSet = createTime == LocalDateTime.MIN;
-        if (notSet) {
+        boolean Null = createTime == null;
+        if (Null) {
             createTime = updateTime;
         }
     }
