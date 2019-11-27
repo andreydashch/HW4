@@ -1,8 +1,6 @@
 package ua.training.subscriber;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 
 public class SubscriberCard{
     private Identity identity;
@@ -58,15 +56,16 @@ class Name {
         this.surname = surname;
     }
 }
+
 class Contacts {
     public TelephonesNumbers telephonesNumbers;
+    public Address address;
     private String email;
     private String skype;
-    private Map<String, String> address;
 
     Contacts() {
         telephonesNumbers = new TelephonesNumbers();
-        address = new HashMap<String, String>();
+        address = new Address();
     }
 
     public void setEmail(String email) {
@@ -76,24 +75,33 @@ class Contacts {
     public void setSkype(String skype) {
         this.skype = skype;
     }
+}
 
-    public void setAddressIndex(String index) {
-        this.address.put("index", index);
+class Address {
+    String index;
+    String city;
+    String street;
+    String house;
+    String flatNumber;
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public void setAddressCity(String city) {
-        this.address.put("city", city);
+    public void setFlatNumber(String flatNumber) {
+        this.flatNumber = flatNumber;
     }
 
-    public void setAddressStreet(String street) {
-        this.address.put("street", street);
+    public void setHouse(String house) {
+        this.house = house;
     }
 
-    public void setAddressHouse(String house) {
-        this.address.put("house", house);
+    public void setIndex(String index) {
+        this.index = index;
     }
-    public void setAddressFlatNumber(String flatNumber) {
-        this.address.put("flatNumber", flatNumber);
+
+    public void setStreet(String street) {
+        this.street = street;
     }
 }
 
