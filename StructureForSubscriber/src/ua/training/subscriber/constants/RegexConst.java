@@ -9,6 +9,8 @@
 
 package ua.training.subscriber.constants;
 
+import java.util.Scanner;
+
 /**
  * @author      Dashchyk Andrey
  */
@@ -28,4 +30,25 @@ public class RegexConst {
     public static final String STREET = "";
     public static final String HOUSE_NUMBER = "";
     public static final String FLAT_NUMBER = "";
+
+    public static String[] getRegexArray() {
+
+        return new String[]{
+                FIRST_NAME,
+                SURNAME,
+                PATRONYMIC,
+                NICK_NAME,
+                COMMENT,
+                GROUP,
+                HOME_TELEPHONE,
+                MOBIL_TELEPHONE,
+                EMAIL,
+                SKYPE,
+                INDEX,
+                CITY,
+                STREET,
+                HOUSE_NUMBER,
+                FLAT_NUMBER
+        };
+    }
 }

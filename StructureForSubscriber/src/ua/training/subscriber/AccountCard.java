@@ -26,6 +26,11 @@ public class AccountCard {
         meta = new Meta();
     }
 
+    public static String[] getKeysOfMap() {
+        Const map = new Const();
+        return map.keys;
+    }
+
     public void setAccountCard(HashMap<String, String> account) {
         meta.setUpdateTime();
         identity.name.setFirstName(account.get("firstName"));
@@ -71,6 +76,7 @@ public class AccountCard {
     public LocalDateTime getUpdateTime(){
         return meta.getUpdateTime();
     }
+
 }
 
 class Identity {
@@ -267,4 +273,24 @@ class Meta {
     public LocalDateTime getUpdateTime() {
         return updateTime;
     }
+}
+
+class Const {
+    public final String[] keys ={
+            "firstName",
+            "surname",
+            "nickName",
+            "comment",
+            "group",
+            "homeTelephone",
+            "mobil1Telephone",
+            "mobil2Telephone",
+            "email",
+            "skype",
+            "index",
+            "city",
+            "street",
+            "houseNumber",
+            "flatNumber"
+    };
 }

@@ -28,7 +28,7 @@ public class Controller {
     }
 
     public void processUser(){
-        Scanner sc = new Scanner(System.in):
+        Scanner sc = new Scanner(System.in);
         HashMap<String, String> accountInfo;
 
         accountCard.setAccountCard(getUserInfo(sc));
@@ -39,25 +39,15 @@ public class Controller {
     }
 
     private HashMap<String, String> getUserInfo(Scanner sc) {
-        HashMap<String, String> account;
-        account = new HashMap<>();
+        int index = 0;
+        HashMap<String, String> account = new HashMap<>();
+        String[] keysArray = AccountCard.getKeysOfMap();
+        String[] regexArray = RegexConst.getRegexArray();
 
-        account.put("firstName", getValidInput(sc, RegexConst.FIRST_NAME));
-        account.put("surname", getValidInput(sc, RegexConst.SURNAME));
-        account.put("patronymic", getValidInput(sc, RegexConst.PATRONYMIC));
-        account.put("nickName", getValidInput(sc, RegexConst.NICK_NAME));
-        account.put("comment", getValidInput(sc, RegexConst.COMMENT));
-        account.put("group", getValidInput(sc, RegexConst.GROUP));
-        account.put("homeTelephone", getValidInput(sc, RegexConst.HOME_TELEPHONE));
-        account.put("mobil1Telephone", getValidInput(sc, RegexConst.MOBIL_TELEPHONE));
-        account.put("mobil2Telephone", getValidInput(sc, RegexConst.MOBIL_TELEPHONE));
-        account.put("email", getValidInput(sc, RegexConst.EMAIL));
-        account.put("skype", getValidInput(sc, RegexConst.SKYPE));
-        account.put("index", getValidInput(sc, RegexConst.INDEX));
-        account.put("city", getValidInput(sc, RegexConst.CITY));
-        account.put("street", getValidInput(sc, RegexConst.STREET));
-        account.put("houseNumber", getValidInput(sc, RegexConst.HOUSE_NUMBER));
-        account.put("flatNumber", getValidInput(sc, RegexConst.FLAT_NUMBER));
+        for (String key : keysArray){
+            account.put(key, getValidInput(sc, regexArray[index]));
+            index++;
+        }
 
         return account;
     }
