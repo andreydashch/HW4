@@ -38,17 +38,17 @@ class Data {
 
      String[] getUserInfo(Scanner sc) {
         String[] keysArray;
-        String[] regexArray;
+        HashMap<String, String > regexArray;
         String[] output;
         String validInput;
         int index = 0;
 
         keysArray = AccountCard.getFieldsKeys();
-        regexArray = RegexConst.getRegexArray();
+        regexArray = RegexConst.REGEX;
         output = new String[getLengthOfKeysMap()];
 
         for (String key : keysArray){
-            validInput = getValidInput(sc, regexArray[index], key);
+            validInput = getValidInput(sc, regexArray.get(key), key);
             output[index] = (validInput);
             index++;
         }
@@ -62,6 +62,7 @@ class Data {
         while (true) {
             regex = checkRequirements(regex, key);
             view.printMessage(genHintMessage(key));
+            view.printMessage(regex);
             temp = sc.next();
 
             if (temp.matches(regex)) {

@@ -11,6 +11,7 @@ package ua.training.subscriber;
 
 import ua.training.subscriber.account.AccountCard;
 import ua.training.subscriber.controller.Controller;
+import ua.training.subscriber.globalconstants.RegexConst;
 import ua.training.subscriber.view.View;
 
 /**
@@ -25,12 +26,15 @@ public class Main {
      */
     public static void main( String[] args ){
         // Initialization
+        RegexConst.setREGEX();
         AccountCard accountCard = new AccountCard();
         View view = new View();
+
         Controller controller = new Controller(accountCard, view);
 
         //Run
         controller.processUser();
     }
+
 
 }

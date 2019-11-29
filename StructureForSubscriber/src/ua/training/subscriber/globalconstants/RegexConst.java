@@ -9,6 +9,10 @@
 
 package ua.training.subscriber.globalconstants;
 
+import ua.training.subscriber.account.AccountCard;
+
+import java.util.HashMap;
+
 /**
  * @author      Dashchyk Andrey
  */
@@ -28,8 +32,21 @@ public class RegexConst {
     public static final String STREET = "\\w*";
     public static final String HOUSE_NUMBER = "[\\d]{1,4}[1-9]";
     public static final String FLAT_NUMBER = "[\\d]{1,5}[1-9]";
+    public static final HashMap<String, String> REGEX = new HashMap<>();
 
-    public static String[] getRegexArray() {
+
+    public static void setREGEX() {
+        int index = 0;
+        String[] regexArray = getRegexArray();
+        String[] keysArray = AccountCard.getFieldsKeys();
+
+        for(String key : keysArray) {
+            REGEX.put(key, regexArray[index]);
+            index++;
+        }
+    }
+
+    private static String[] getRegexArray() {
 
         // sequence is very important
         return new String[]{
