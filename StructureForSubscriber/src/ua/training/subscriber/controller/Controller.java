@@ -33,7 +33,7 @@ public class Controller {
         HashMap<String, String> accountInfo;
 
         accountCard.setAccountCard(data.getUserInfo(sc));
-        accountInfo = accountCard.getAccountCard(TextConst.NAME_SEPARATOR,
+        accountInfo = accountCard.getFieldsKeys(TextConst.NAME_SEPARATOR,
                 TextConst.ADDRESS_SEPARATOR);
 
         data.printAccountCard(accountInfo);

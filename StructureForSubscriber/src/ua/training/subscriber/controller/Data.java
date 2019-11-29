@@ -43,7 +43,7 @@ class Data {
         String validInput;
         int index = 0;
 
-        keysArray = AccountCard.getKeysOfMap();
+        keysArray = AccountCard.getFieldsKeys();
         regexArray = RegexConst.getRegexArray();
         output = new String[getLengthOfKeysMap()];
 
@@ -71,7 +71,7 @@ class Data {
     }
 
     private String checkRequirements(String regex, String key) {
-        for(String elem : AccountCard.getNotRequiredKeysOfMap()){
+        for(String elem : AccountCard.getNotRequiredFieldsKeys()){
             boolean notRequire = elem.equals(key);
 
             if(notRequire){

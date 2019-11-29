@@ -16,6 +16,10 @@ import java.util.HashMap;
  * @author      Dashchyk Andrey
  */
 public class AccountCard {
+    /*
+     * After adding field,
+     * add them to Const.keys too!!!!
+     */
     private Identity identity;
     private Contacts contacts;
     private Meta meta;
@@ -26,7 +30,7 @@ public class AccountCard {
         meta = new Meta();
     }
 
-    public static String[] getKeysOfMap() {
+    public static String[] getFieldsKeys() {
         return Const.keys;
     }
 
@@ -34,7 +38,7 @@ public class AccountCard {
         return Const.keys.length;
     }
 
-    public static String[] getNotRequiredKeysOfMap(){
+    public static String[] getNotRequiredFieldsKeys(){
         return Const.notRequiredKeys;
     }
 
@@ -104,7 +108,7 @@ public class AccountCard {
         contacts.address.setFlatNumber(data[15]);
     }
 
-    public HashMap<String, String> getAccountCard(String nameSeparator, String addressSeparator) {
+    public HashMap<String, String> getFieldsKeys(String nameSeparator, String addressSeparator) {
         HashMap<String, String> account;
 
         account = new HashMap<>();
