@@ -30,28 +30,78 @@ public class AccountCard {
         return Const.keys;
     }
 
+    public static int getLengthOfKeysMap() {
+        return Const.keys.length;
+    }
+
     public static String[] getNotRequiredKeysOfMap(){
         return Const.notRequiredKeys;
     }
 
-    public void setAccountCard(HashMap<String, String> account) {
+    /**
+     * Need be update with
+     * update of fields list
+     *
+     * But more understandable
+     */
+    public void setAccountCard(
+                        String firstName,
+                        String surname,
+                        String patronymic,
+                        String nickName,
+                        String comment,
+                        String group,
+                        String homeTelephone,
+                        String mobil1Telephone,
+                        String mobil2Telephone,
+                        String email,
+                        String skype,
+                        String index,
+                        String city,
+                        String street,
+                        String houseNumber,
+                        String flatNumber) {
+        String[] data = {
+                 firstName,
+                 surname,
+                 patronymic,
+                 nickName,
+                 comment,
+                 group,
+                 homeTelephone,
+                 mobil1Telephone,
+                 mobil2Telephone,
+                 email,
+                 skype,
+                 index,
+                 city,
+                 street,
+                 houseNumber,
+                 flatNumber
+        };
+
+        setAccountCard(data);
+
+    }
+
+    public void setAccountCard(String[] data) {
         meta.setUpdateTime();
-        identity.name.setFirstName(account.get("firstName"));
-        identity.name.setSurname(account.get("surname"));
-        identity.name.setPatronymic(account.get("patronymic"));
-        identity.setNickName(account.get("nickName"));
-        identity.setComment(account.get("comment"));
-        identity.setGroup(account.get("group"));
-        contacts.telephonesNumbers.setHome(account.get("homeTelephone"));
-        contacts.telephonesNumbers.setMobil1(account.get("mobil1Telephone"));
-        contacts.telephonesNumbers.setMobil2(account.get("mobil2Telephone"));
-        contacts.setEmail(account.get("email"));
-        contacts.setSkype(account.get("skype"));
-        contacts.address.setIndex(account.get("index"));
-        contacts.address.setCity(account.get("city"));
-        contacts.address.setStreet(account.get("street"));
-        contacts.address.setHouseNumber(account.get("houseNumber"));
-        contacts.address.setFlatNumber(account.get("flatNumber"));
+        identity.name.setFirstName(data[0]);
+        identity.name.setSurname(data[1]);
+        identity.name.setPatronymic(data[2]);
+        identity.setNickName(data[3]);
+        identity.setComment(data[4]);
+        identity.setGroup(data[5]);
+        contacts.telephonesNumbers.setHome(data[6]);
+        contacts.telephonesNumbers.setMobil1(data[7]);
+        contacts.telephonesNumbers.setMobil2(data[8]);
+        contacts.setEmail(data[9]);
+        contacts.setSkype(data[10]);
+        contacts.address.setIndex(data[11]);
+        contacts.address.setCity(data[12]);
+        contacts.address.setStreet(data[13]);
+        contacts.address.setHouseNumber(data[14]);
+        contacts.address.setFlatNumber(data[15]);
     }
 
     public HashMap<String, String> getAccountCard(String nameSeparator, String addressSeparator) {

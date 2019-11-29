@@ -14,9 +14,9 @@ import ua.training.subscriber.account.AccountCard;
 import ua.training.subscriber.globalconstants.RegexConst;
 import ua.training.subscriber.globalconstants.TextConst;
 
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
+
+import static ua.training.subscriber.account.AccountCard.getLengthOfKeysMap;
 
 /**
  * @author      Dashchyk Andrey
@@ -36,20 +36,24 @@ class Data {
         }
     }
 
-    HashMap<String, String> getUserInfo(Scanner sc) {
-        int index = 0;
+     String[] getUserInfo(Scanner sc) {
+        String[] keysArray;
+        String[] regexArray;
+        String[] output;
         String validInput;
-        HashMap<String, String> account = new HashMap<>();
-        String[] keysArray = AccountCard.getKeysOfMap();
-        String[] regexArray = RegexConst.getRegexArray();
+        int index = 0;
+
+        keysArray = AccountCard.getKeysOfMap();
+        regexArray = RegexConst.getRegexArray();
+        output = new String[getLengthOfKeysMap()];
 
         for (String key : keysArray){
             validInput = getValidInput(sc, regexArray[index], key);
-            account.put(key, validInput);
+            output[index] = (validInput);
             index++;
         }
 
-        return account;
+        return output;
     }
 
     private String getValidInput(Scanner sc, String regex, String key) {
