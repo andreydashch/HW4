@@ -26,7 +26,7 @@ public class Main {
      */
     public static void main( String[] args ){
         // Initialization
-        RegexConst.setREGEX();
+        RegexConst.initializeREGEX();
         AccountCard accountCard = new AccountCard();
         View view = new View();
 
