@@ -35,7 +35,7 @@ public class RegexConst {
     public static final HashMap<String, String> REGEX = new HashMap<>();
 
 
-    public static void setREGEX() {
+    public static void initializeREGEX() {
         int index = 0;
         String[] regexArray = getRegexArray();
         String[] keysArray = AccountCard.getFieldsKeys();
